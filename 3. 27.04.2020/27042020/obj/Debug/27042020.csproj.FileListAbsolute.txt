@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\LAB\P114\27042020\bin\Debug\27042020.exe.config
+C:\Users\User\Desktop\LAB\P114\27042020\bin\Debug\27042020.exe
+C:\Users\User\Desktop\LAB\P114\27042020\bin\Debug\27042020.pdb
+C:\Users\User\Desktop\LAB\P114\27042020\obj\Debug\27042020.csprojAssemblyReference.cache
+C:\Users\User\Desktop\LAB\P114\27042020\obj\Debug\27042020.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\LAB\P114\27042020\obj\Debug\27042020.exe
+C:\Users\User\Desktop\LAB\P114\27042020\obj\Debug\27042020.pdb
