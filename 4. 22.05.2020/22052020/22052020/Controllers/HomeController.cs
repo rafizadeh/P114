@@ -12,7 +12,6 @@ namespace _22052020.Controllers
         {
             return View();
         }
-
       
     }
 }
