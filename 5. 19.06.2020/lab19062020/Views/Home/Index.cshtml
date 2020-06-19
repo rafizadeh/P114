@@ -1,0 +1,75 @@
+﻿@using PagedList.Mvc
+@using PagedList
+
+@model IEnumerable<lab19062020.Models.Product>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row centered">
+    <div class="col-12">
+        <h2>Product List</h2>
+    </div>
+    @foreach (var product in Model)
+    {
+        <div class="col-lg-4 mb-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="https://via.placeholder.com/286x180">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Description</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    }
+
+    @* PagedList Pagination View *@
+    <div class="col-lg-12">
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }),
+        new PagedListRenderOptions
+        {
+            DisplayItemSliceAndTotal = true,
+            UlElementClasses = new[] { "pagination justify-content-center" },
+            ContainerDivClasses = new[] { "navigation bordered" },
+            LiElementClasses = new[] { "page-item" },
+            LinkToNextPageFormat = ">",
+            MaximumPageNumbersToDisplay=2
+        })
+    </div>
+
+    @* Custom Pagination View *@
+    @*<div class="col-12">
+            <nav aria-label="...">
+                <ul class="pagination pagination-sm justify-content-center">
+                    @for (int i = 0; i < ViewBag.PageSize; i++)
+                    {
+                        if (i == ViewBag.Page)
+                        {
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">
+                                    @(i + 1)
+                                    <span class="sr-only">(current)</span>
+                                </span>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="page-item"><a href="/Home/Index?page=@i" class="page-link">@(i + 1)</a></li>
+                        }
+                    }
+
+                </ul>
+            </nav>
+        </div>*@
+
+
+</div>
+@section Scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('.page-item a').addClass('page-link')
+            $('ul.pagination > li.disabled > a').addClass('page-link');
+        });
+    </script>
+}
